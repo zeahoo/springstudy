@@ -2,11 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+  <!-- basic injection -->
   <bean class="org.sonny.form.HelloForm">
     <property name="message" value="Hello, World"/>
   </bean>
-
+  <!-- factory method create instance -->
   <bean id="serviceLocator" class="org.sonny.service.locator.DefaultServiceLocator">
     <!-- inject any dependencies required by this locator bean -->
   </bean>
@@ -18,8 +18,11 @@
   <bean id="accountService"
     factory-bean="serviceLocator"
     factory-method="createAccountServiceInstance"/>
+  <!-- construct base dependency injection -->
   <bean id="constructForm" class="org.sonny.form.ConstructForm">
     <constructor-arg name="version" value="1"/>
     <constructor-arg name="name" value="constructDemo"/>
   </bean>
+
+  
 </beans>
