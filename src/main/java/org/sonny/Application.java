@@ -1,5 +1,6 @@
 package org.sonny;
 
+import org.sonny.form.HelloForm;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

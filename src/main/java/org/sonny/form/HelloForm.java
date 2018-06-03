@@ -1,4 +1,4 @@
-package org.sonny;
+package org.sonny.form;
 
 public class HelloForm {
   private String message;

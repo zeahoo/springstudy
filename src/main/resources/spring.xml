@@ -3,7 +3,19 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean class="org.sonny.HelloForm">
+  <bean class="org.sonny.form.HelloForm">
     <property name="message" value="Hello, World"/>
   </bean>
+
+  <bean id="serviceLocator" class="org.sonny.service.locator.DefaultServiceLocator">
+    <!-- inject any dependencies required by this locator bean -->
+  </bean>
+
+  <bean id="clientService"
+    factory-bean="serviceLocator"
+    factory-method="createClientServiceInstance"/>
+
+  <bean id="accountService"
+    factory-bean="serviceLocator"
+    factory-method="createAccountServiceInstance"/>
 </beans>
