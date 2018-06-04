@@ -76,4 +76,9 @@
     </property>
     <property name="emptyValue" value="" />
   </bean>
+  <bean id="mousePad" class="org.sonny.dependOn.MousePad" depends-on="mouse" lazy-init="true"/>
+  <bean id="mouse" class="org.sonny.dependOn.Mouse" depends-on="laptop"/>
+  <bean id="laptop" class="org.sonny.dependOn.Laptop"  lazy-init="true"/>
+  
+  
 </beans>

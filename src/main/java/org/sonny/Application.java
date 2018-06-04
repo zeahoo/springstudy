@@ -25,6 +25,7 @@ public class Application {
     CommonUtil.output(context.getBean(ComplexForm.class));
     // strong type, empty, null form
     CommonUtil.output(context.getBean(StrongTypeForm.class));
+
   }
 
 
