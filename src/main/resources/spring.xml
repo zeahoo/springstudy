@@ -23,6 +23,14 @@
     <constructor-arg name="version" value="1"/>
     <constructor-arg name="name" value="constructDemo"/>
   </bean>
-
-  
+  <!-- inner bean -->
+  <bean id="outer" class="org.sonny.form.OutBean">
+    <!-- instead of using a reference to a target bean, simply define the target bean inline -->
+    <property name="target">
+        <bean class="org.sonny.form.PersonForm"> <!-- this is the inner bean -->
+            <property name="name" value="Fiona Apple"/>
+            <property name="age" value="25"/>
+        </bean>
+    </property>
+  </bean>
 </beans>
