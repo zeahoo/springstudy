@@ -63,4 +63,17 @@
         </set>
     </property>
   </bean>
+  <bean id="strongTypeFrm" class="org.sonny.form.StrongTypeForm">
+    <property name="accounts">
+      <map>
+        <entry key="one" value="9.99"/>
+        <entry key="two" value="2.75"/>
+        <entry key="six" value="3.99"/>
+      </map>
+    </property>
+    <property name="nullValue">
+    	<null/>
+    </property>
+    <property name="emptyValue" value="" />
+  </bean>
 </beans>

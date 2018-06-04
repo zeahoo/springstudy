@@ -4,6 +4,7 @@ import org.sonny.form.ComplexForm;
 import org.sonny.form.ConstructForm;
 import org.sonny.form.HelloForm;
 import org.sonny.form.OutBean;
+import org.sonny.form.StrongTypeForm;
 import org.sonny.utils.CommonUtil;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,17 +16,15 @@ public class Application {
   public static void main(String[] args) {
     ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
     // set di
-    HelloForm helloForm = context.getBean(HelloForm.class);
-    CommonUtil.output(helloForm);
+    CommonUtil.output(context.getBean(HelloForm.class));
     // construct di
-    ConstructForm constructForm = context.getBean(ConstructForm.class);
-    CommonUtil.output(constructForm);
+    CommonUtil.output(context.getBean(ConstructForm.class));
     // inner bean
-    OutBean out = context.getBean(OutBean.class);
-    CommonUtil.output(out);
+    CommonUtil.output(context.getBean(OutBean.class));
     // complex form di
-    ComplexForm complexForm = context.getBean(ComplexForm.class);
-    CommonUtil.output(complexForm);
+    CommonUtil.output(context.getBean(ComplexForm.class));
+    // strong type, empty, null form
+    CommonUtil.output(context.getBean(StrongTypeForm.class));
   }
 
 
