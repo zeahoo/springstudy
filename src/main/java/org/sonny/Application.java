@@ -1,9 +1,10 @@
 package org.sonny;
 
+import org.sonny.form.ComplexForm;
 import org.sonny.form.ConstructForm;
 import org.sonny.form.HelloForm;
 import org.sonny.form.OutBean;
-import org.sonny.form.PersonForm;
+import org.sonny.utils.CommonUtil;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,14 +15,18 @@ public class Application {
   public static void main(String[] args) {
     ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
     // set di
-    HelloForm form = context.getBean(HelloForm.class);
-    System.out.println(form.getMessage());
+    HelloForm helloForm = context.getBean(HelloForm.class);
+    CommonUtil.output(helloForm);
     // construct di
     ConstructForm constructForm = context.getBean(ConstructForm.class);
-    System.out.printf("%d -- %s\n", constructForm.getVersion(), constructForm.getName());
+    CommonUtil.output(constructForm);
     // inner bean
     OutBean out = context.getBean(OutBean.class);
-    PersonForm personForm = out.getTarget();
-    System.out.printf("name: %s --- age: %d\n", personForm.getName(), personForm.getAge());
+    CommonUtil.output(out);
+    // complex form di
+    ComplexForm complexForm = context.getBean(ComplexForm.class);
+    CommonUtil.output(complexForm);
   }
+
+
 }

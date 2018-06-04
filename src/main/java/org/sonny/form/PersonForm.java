@@ -1,5 +1,7 @@
 package org.sonny.form;
 
+import com.alibaba.fastjson.JSON;
+
 public class PersonForm {
   private String name;
   private Integer age;
@@ -20,5 +22,9 @@ public class PersonForm {
     this.age = age;
   }
 
+  @Override
+  public String toString() {
+    return JSON.toJSONString(this, true);
+  }
 
 }
