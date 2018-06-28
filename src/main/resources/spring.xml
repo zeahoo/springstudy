@@ -27,14 +27,14 @@
   <bean id="outer" class="org.sonny.form.OutBean">
     <!-- instead of using a reference to a target bean, simply define the target bean inline -->
     <property name="target">
-        <bean class="org.sonny.form.PersonForm"> <!-- this is the inner bean -->
-            <property name="name" value="Fiona Apple"/>
-            <property name="age" value="25"/>
-        </bean>
+      <bean class="org.sonny.form.PersonForm"> <!-- this is the inner bean -->
+        <property name="name" value="Fiona Apple"/>
+        <property name="age" value="25"/>
+      </bean>
     </property>
   </bean>
   <bean id="myDataSource" class="org.sonny.form.DataSourceForm">
-  	<property name="source" value="abcd"/>
+    <property name="source" value="abcd"/>
   </bean>
   <bean id="complexForm" class="org.sonny.form.ComplexForm">
     <property name="adminEmails">
@@ -47,23 +47,23 @@
     <property name="someList">
       <list>
         <value>a list element followed by a reference</value>
-        <ref bean="myDataSource" />
+        <ref bean="myDataSource"/>
       </list>
     </property>
     <property name="someMap">
-        <map>
-            <entry key="an entry" value="just some string"/>
-            <entry key ="a ref" value-ref="myDataSource"/>
-        </map>
+      <map>
+        <entry key="an entry" value="just some string"/>
+        <entry key="a ref" value-ref="myDataSource"/>
+      </map>
     </property>
     <property name="someSet">
-        <set>
-            <value>just some string</value>
-            <ref bean="myDataSource" />
-        </set>
+      <set>
+        <value>just some string</value>
+        <ref bean="myDataSource"/>
+      </set>
     </property>
   </bean>
-  <bean id="strongTypeFrm" class="org.sonny.form.StrongTypeForm">
+  <bean id="strongTypeForm" class="org.sonny.form.StrongTypeForm">
     <property name="accounts">
       <map>
         <entry key="one" value="9.99"/>
@@ -72,13 +72,12 @@
       </map>
     </property>
     <property name="nullValue">
-    	<null/>
+      <null/>
     </property>
-    <property name="emptyValue" value="" />
+    <property name="emptyValue" value=""/>
   </bean>
   <bean id="mousePad" class="org.sonny.dependOn.MousePad" depends-on="mouse" lazy-init="true"/>
   <bean id="mouse" class="org.sonny.dependOn.Mouse" depends-on="laptop"/>
-  <bean id="laptop" class="org.sonny.dependOn.Laptop"  lazy-init="true"/>
-  
-  
+  <bean id="laptop" class="org.sonny.dependOn.Laptop" lazy-init="true"/>
+
 </beans>

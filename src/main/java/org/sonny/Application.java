@@ -1,11 +1,13 @@
 package org.sonny;
 
+import java.util.Properties;
 import org.sonny.form.ComplexForm;
 import org.sonny.form.ConstructForm;
 import org.sonny.form.HelloForm;
 import org.sonny.form.OutBean;
 import org.sonny.form.StrongTypeForm;
 import org.sonny.utils.CommonUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -25,7 +27,6 @@ public class Application {
     CommonUtil.output(context.getBean(ComplexForm.class));
     // strong type, empty, null form
     CommonUtil.output(context.getBean(StrongTypeForm.class));
-
   }
 
 
